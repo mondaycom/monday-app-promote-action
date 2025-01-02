@@ -7,7 +7,7 @@ FROM node:20-alpine
 RUN npm install -g @mondaycom/apps-cli@4.4.0
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
-COPY entrypoint.sh /promote_entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["/promote_entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
