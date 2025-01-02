@@ -1,0 +1,19 @@
+name: 'Monday app promote'
+description: 'Promote monday app to live'
+inputs:
+  token:
+    description: 'Monday developer token'
+    required: true
+  appId:
+    description: 'The ID of your monday app'
+    required: true
+  versionId:
+    description: 'The version ID of your monday app'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+  - ${{ inputs.token }}
+  - ${{ inputs.appId }}
+  - ${{ inputs.versionId }}
